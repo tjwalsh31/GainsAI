@@ -5,9 +5,6 @@ import './Navbar.css';
 const Navbar = () => {
     return (
         <nav className="navbar">
-            <Link to="/" className="navbar-logo">
-                GainsAI
-            </Link>
             <ul className="navbar-links">
                 <li className="navbar-link">
                     <Link to="/">Home</Link>

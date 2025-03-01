@@ -1,8 +1,190 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/* Full-page styling with gradient */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #e8eaf6, #f5f7fa); /* Soft gradient */
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding: 40px 20px; /* More padding for balance */
+  animation: fadeIn 1s ease-in-out;
+}
 
+/* Page fade-in effect */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Main content wrapper */
 .homepage {
-    text-align: center;
-    padding: 20px;
-    font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 60px 20px; /* More padding for spacing */
+  width: 100%;
+  max-width: 1200px;
+  min-height: 200vh; /* Ensures page is tall enough to scroll */
+}
+
+/* Spaced-out heading */
+/* Welcome Heading Styling */
+h1 {
+  color: #2c3e50;
+  font-size: 46px;
+  font-weight: bold;
+  margin-top: 80px; /* Pushes the heading down */
+  margin-bottom: 80px; /* More space below */
+  text-align: center;
+  letter-spacing: 4px; /* More spacing between letters */
+  word-spacing: 6px; /* More space between words */
+  padding: 25px 0; /* Vertical spacing */
+}
+
+
+/* Container for planners */
+.planner-container {
+  display: flex;
+  justify-content: center;
+  gap: 80px; /* More space between cards */
+  margin-top: 80px;
+  flex-wrap: wrap;
+  padding-bottom: 60px;
+}
+
+/* Card styles */
+.workout-planner, .meal-planner {
+  background: white;
+  border-radius: 12px;
+  padding: 45px; /* More padding inside */
+  width: 42%;
+  max-width: 450px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  flex: 1;
+  min-width: 320px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  animation: floatUp 0.8s ease-in-out;
+}
+
+/* Hover effect */
+.workout-planner:hover, .meal-planner:hover {
+  transform: rotate(-2deg) scale(1.07);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #fefcea, #f1da36);
+}
+
+/* Titles inside cards */
+h2 {
+  color: #27ae60;
+  font-size: 28px;
+  margin-bottom: 25px; /* More spacing under title */
+}
+
+/* Fun Button Styles */
+button {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  margin-top: 20px; /* More spacing above */
+  cursor: pointer;
+  font-size: 22px;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+/* Hover effect for buttons */
+button:hover {
+  transform: scale(1.08);
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+/* Hero Section */
+.hero {
+  margin-top: 60px; /* More spacing before hero section */
+  padding-bottom: 50px;
+}
+
+.hero .logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 6.5em;
+  color: #FFD100; /* Gold logo text */
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: glow 2s infinite alternate;
+  padding: 12px 35px; /* More padding around text */
+}
+
+/* Card Section */
+.cards-section {
+  display: flex;
+  justify-content: center;
+  gap: 60px; /* More spacing between cards */
+  padding: 70px 50px; /* Added padding for better separation */
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 360px;
+  padding: 35px;
+  background: white;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  animation: floatUp 0.8s ease-in-out;
+  margin-bottom: 50px; /* Extra space between rows */
+}
+
+/* Ensure responsiveness */
+@media (max-width: 1024px) {
+  .homepage {
+    padding-top: 110px;
   }
-  
+
+  .planner-container {
+    gap: 60px;
+  }
+
+  .workout-planner, .meal-planner {
+    width: 85%;
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage {
+    padding-top: 100px;
+  }
+
+  .planner-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .workout-planner, .meal-planner {
+    width: 95%;
+    padding: 40px; /* Adjusted padding */
+  }
+
+  .cards-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+  }
+
+  .card {
+    width: 95%;
+    padding: 35px;
+  }
+}
