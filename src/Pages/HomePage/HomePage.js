@@ -1,7 +1,7 @@
 import React from "react";
-import "./HomePage.css";
+import "./HomePage.css"; // Import CSS for styling
 
-const HomePage: React.FC = () => {
+const HomePage = () => {
   return (
     <div className="homepage">
       <h1>Welcome to GainsAI</h1>
