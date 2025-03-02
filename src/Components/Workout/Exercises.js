@@ -13,7 +13,7 @@ const ExerciseList = ({ bodyPart }) => {
           {
             headers: {
               "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
-              "X-RapidAPI-Key": "d47f788badmsh829fb15b0d01428p133b75jsn596099baedb4", // Replace with your key
+              "X-RapidAPI-Key": process.env.REACT_APP_RAPIDAPI_KEY, // Use the key from .env
             },
           }
         );
