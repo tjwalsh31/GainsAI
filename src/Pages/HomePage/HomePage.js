@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../../Components/Navbar/Navbar"; // Import Navbar component
+import Footer from "../../Components/Navbar/Footer"; // Go up two directories, then into Components/Footer
 import "./HomePage.css"; // Import CSS for styling
 
 const HomePage = () => {
@@ -23,6 +24,8 @@ const HomePage = () => {
           <button onClick={() => window.location.href='/meal-planner'}>Go to Meal Planner</button>
         </section>
       </div>
+
+      <Footer /> {/* Add Footer component */}
     </div>
   );
 };

@@ -14,9 +14,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  min-height: 100vh;
-  overflow-x: hidden;
-  padding: 40px 20px; /* More padding for balance */
+  min-height: 100vh; /* Ensures the body takes at least full viewport height */
+  height: 100%; /* Ensures that the body can grow if content exceeds viewport */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: auto; /* Enables vertical scrolling */
+  padding: 20px;
   animation: fadeIn 1s ease-in-out;
 }
 
@@ -29,55 +31,56 @@ body {
 /* Main content wrapper */
 .homepage {
   text-align: center;
-  padding: 60px 20px; /* More padding for spacing */
-  width: 100%;
+  padding: 30px 20px;
+  width: 100%; /* Ensure content stretches across full width */
   max-width: 1200px;
-  min-height: 200vh; /* Ensures page is tall enough to scroll */
+  margin-bottom: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Spaced-out heading */
-/* Welcome Heading Styling */
 h1 {
   color: #2c3e50;
-  font-size: 46px;
+  font-size: 36px;
   font-weight: bold;
-  margin-top: 80px; /* Pushes the heading down */
-  margin-bottom: 80px; /* More space below */
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-align: center;
-  letter-spacing: 4px; /* More spacing between letters */
-  word-spacing: 6px; /* More space between words */
-  padding: 25px 0; /* Vertical spacing */
+  letter-spacing: 2px;
+  word-spacing: 4px;
+  padding: 10px 0;
 }
-
 
 /* Container for planners */
 .planner-container {
   display: flex;
   justify-content: center;
-  gap: 80px; /* More space between cards */
-  margin-top: 80px;
+  gap: 30px;
+  margin-top: 30px;
   flex-wrap: wrap;
-  padding-bottom: 60px;
+  padding-bottom: 30px;
 }
 
 /* Card styles */
 .workout-planner, .meal-planner {
   background: white;
   border-radius: 12px;
-  padding: 45px; /* More padding inside */
-  width: 42%;
-  max-width: 450px;
+  padding: 30px;
+  width: 45%;
+  max-width: 400px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
   text-align: center;
   flex: 1;
-  min-width: 320px;
+  min-width: 280px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   animation: floatUp 0.8s ease-in-out;
 }
 
 /* Hover effect */
 .workout-planner:hover, .meal-planner:hover {
-  transform: rotate(-2deg) scale(1.07);
+  transform: rotate(-2deg) scale(1.05);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   background: linear-gradient(135deg, #fefcea, #f1da36);
 }
@@ -85,8 +88,8 @@ h1 {
 /* Titles inside cards */
 h2 {
   color: #27ae60;
-  font-size: 28px;
-  margin-bottom: 25px; /* More spacing under title */
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 /* Fun Button Styles */
@@ -94,10 +97,10 @@ button {
   background: linear-gradient(135deg, #27ae60, #2ecc71);
   color: white;
   border: none;
-  padding: 16px 32px;
-  margin-top: 20px; /* More spacing above */
+  padding: 12px 24px;
+  margin-top: 10px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 18px;
   border-radius: 8px;
   transition: background 0.3s ease, transform 0.2s ease;
   animation: bounce 2s infinite ease-in-out;
@@ -105,66 +108,56 @@ button {
 
 /* Hover effect for buttons */
 button:hover {
-  transform: scale(1.08);
+  transform: scale(1.05);
   background: linear-gradient(135deg, #2ecc71, #27ae60);
 }
 
-/* Hero Section */
-.hero {
-  margin-top: 60px; /* More spacing before hero section */
-  padding-bottom: 50px;
+/* Footer Section (to prevent extra space at the bottom) */
+footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 100%; /* Ensure it takes full width */
+  position: relative;
+  bottom: 0;
 }
 
-.hero .logo {
-  font-family: 'Pacifico', cursive;
-  font-size: 6.5em;
-  color: #FFD100; /* Gold logo text */
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-block;
-  animation: glow 2s infinite alternate;
-  padding: 12px 35px; /* More padding around text */
+
+/* Contact Info Styling */
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
 }
 
-/* Card Section */
-.cards-section {
-  display: flex;
-  justify-content: center;
-  gap: 60px; /* More spacing between cards */
-  padding: 70px 50px; /* Added padding for better separation */
-  flex-wrap: wrap;
+.contact-info li {
+  font-size: 16px;
+  margin: 5px 0;
 }
 
-.card {
-  width: 360px;
-  padding: 35px;
-  background: white;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  animation: floatUp 0.8s ease-in-out;
-  margin-bottom: 50px; /* Extra space between rows */
+.footer p {
+  font-size: 14px;
+  margin-top: 20px;
 }
 
 /* Ensure responsiveness */
 @media (max-width: 1024px) {
   .homepage {
-    padding-top: 110px;
+    padding-top: 70px;
   }
 
   .planner-container {
-    gap: 60px;
+    gap: 20px;
   }
 
   .workout-planner, .meal-planner {
-    width: 85%;
+    width: 75%;
   }
 }
 
 @media (max-width: 768px) {
   .homepage {
-    padding-top: 100px;
+    padding-top: 60px;
   }
 
   .planner-container {
@@ -173,18 +166,18 @@ button:hover {
   }
 
   .workout-planner, .meal-planner {
-    width: 95%;
-    padding: 40px; /* Adjusted padding */
+    width: 90%;
+    padding: 25px;
   }
 
   .cards-section {
     flex-direction: column;
     align-items: center;
-    gap: 45px;
+    gap: 30px;
   }
 
   .card {
-    width: 95%;
-    padding: 35px;
+    width: 90%;
+    padding: 25px;
   }
 }

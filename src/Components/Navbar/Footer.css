@@ -1,0 +1,48 @@
+/* Footer Styles */
+.footer {
+    background-color: #1a1a1a; /* Dark background for the footer */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    width: 100%; /* Make the footer take full width */
+    position: relative;
+    bottom: 0;
+}
+
+.footer-content {
+    width: 100%; /* Ensure footer content stretches across full width */
+    max-width: 1400px; /* Optional: restrict width for large screens */
+    margin: 0 auto; /* Center the footer content */
+    text-align: center;
+}
+  .contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+  
+  .contact-info li {
+    font-size: 16px;
+    margin: 5px 0;
+}
+  
+  .footer p {
+    font-size: 14px;
+    margin-top: 20px;
+}
+  
+  /* Ensure the footer content is aligned properly */
+@media (max-width: 768px) {
+    .footer {
+      padding: 20px 10px;
+    }
+  
+    .footer p {
+      font-size: 12px;
+    }
+  
+    .footer-content {
+      width: 90%; /* Slightly reduce width on smaller screens */
+    }
+  }
+  

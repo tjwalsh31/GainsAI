@@ -15,6 +15,10 @@ const Navbar = () => {
                 <li className="navbar-link">
                     <Link to="/meal">Meal Planner</Link>
                 </li>
+                <li className="navbar-link">
+                    <Link to="/diet">About Us</Link>
+
+                </li>
             </ul>
         </nav>
     );
